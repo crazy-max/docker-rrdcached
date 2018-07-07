@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+source /etc/rrdcached.conf
+
+JITTER=""
+if [ "${WRITE_JITTER}" -gt "0" ]; then
+  JITTER="-z ${WRITE_JITTER}"
+fi
+
+exec /usr/sbin/rrdcached \
+  -g \
+  -L \
+  -F \
+  -B \
+  -l /tmp/rrdcached.sock \
+  -p /tmp/rrdcached.pid \
+  -b /data/db \
+  -j /data/journal \
+  -U rrdcached \
+  -G rrdcached \
+  -w ${WRITE_TIMEOUT} \
+  ${JITTER} \
+  -f ${FLUSH_DEAD_DATA_INTERVAL} \
+  -t ${WRITE_THREADS} \
+  -V ${LOG_LEVEL}

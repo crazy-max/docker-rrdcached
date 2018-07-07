@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+  rrdcached:
+    image: crazymax/rrdcached
+    container_name: rrdcached
+    ports:
+      - target: 42217
+        published: 42217
+        protocol: tcp
+    volumes:
+      - rrdcached:/data
+    environment:
+      - TZ=Europe/Paris
+      - LOG_LEVEL=LOG_INFO
+      - WRITE_TIMEOUT=300
+      - WRITE_THREADS=4
+      - FLUSH_DEAD_DATA_INTERVAL=3600
+    restart: always
+
+volumes:
+  rrdcached:
