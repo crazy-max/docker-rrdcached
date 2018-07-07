@@ -9,7 +9,7 @@ echo "Setting timezone to ${TZ}..."
 ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
 echo ${TZ} > /etc/timezone
 
-# Change rtorrent UID / GID
+# Change rrdcached UID / GID
 echo "Checking if rrdcached UID / GID has changed..."
 if [ $(id -u rrdcached) != ${PUID} ]; then
   usermod -u ${PUID} rrdcached

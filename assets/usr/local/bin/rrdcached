@@ -13,6 +13,7 @@ exec /usr/sbin/rrdcached \
   -L \
   -F \
   -B \
+  -R \
   -l /tmp/rrdcached.sock \
   -p /tmp/rrdcached.pid \
   -b /data/db \
