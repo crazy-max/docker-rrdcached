@@ -23,7 +23,6 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 | `TZ`                             | `UTC`             | Timezone assigned to the container (e.g. `Europe/Paris`)
 | `PUID`                           | `1000`            | Daemon user id
 | `PGID`                           | `1000`            | Daemon group id
-|||
 | `LOG_LEVEL`                      | `LOG_INFO`        | Log level (`-V`)
 | `WRITE_TIMEOUT`                  | `300`             | Data is written to disk every *X* seconds (`-w`)
 | `WRITE_JITTER`                   |                   | Delay writing of each RRD for a random number of seconds in the range (`-z`)
