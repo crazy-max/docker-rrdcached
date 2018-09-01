@@ -18,16 +18,14 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 
 ### Environment variables
 
-| Key                              | Default           | Description                               
-|----------------------------------|-------------------|-------------------------------------------
-| `TZ`                             | `UTC`             | Timezone assigned to the container (e.g. `Europe/Paris`)
-| `PUID`                           | `1000`            | Daemon user id
-| `PGID`                           | `1000`            | Daemon group id
-| `LOG_LEVEL`                      | `LOG_INFO`        | Log level (`-V`)
-| `WRITE_TIMEOUT`                  | `300`             | Data is written to disk every *X* seconds (`-w`)
-| `WRITE_JITTER`                   |                   | Delay writing of each RRD for a random number of seconds in the range (`-z`)
-| `WRITE_THREADS`                  | `4`               | Number of threads used for writing RRD files (`-t`)
-| `FLUSH_DEAD_DATA_INTERVAL`       | `3600`            | Every *X* seconds the entire cache is searched for old values which are written to disk (`-f`)
+* `TZ` : Timezone assigned to the container (default `UTC`)
+* `PUID` : Daemon user id (default `1000`)
+* `PGID` : Daemon group id (default `1000`)
+* `LOG_LEVEL` : Log level, called with `-V` (default `LOG_INFO`)
+* `WRITE_TIMEOUT` : Data is written to disk every *X* seconds, called with `-w` (default `300`)
+* `WRITE_JITTER` : Delay writing of each RRD for a random number of seconds in the range, called with `-z`
+* `WRITE_THREADS` : Number of threads used for writing RRD files, called with `-t` (default `4`)
+* `FLUSH_DEAD_DATA_INTERVAL` : Every *X* seconds the entire cache is searched for old values which are written to disk, called with `-f` (default `3600`)
 
 > More info : https://github.com/oetiker/rrdtool-1.x/blob/master/doc/rrdcached.pod
 
@@ -70,9 +68,9 @@ docker-compose pull
 docker-compose up -d
 ```
 
-## How can i help ?
+## How can I help ?
 
-All kinds of contributions are welcomed :raised_hands:!<br />
+All kinds of contributions are welcome :raised_hands:!<br />
 The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon:<br />
 But we're not gonna lie to each other, I'd rather you buy me a beer or two :beers:!
 
