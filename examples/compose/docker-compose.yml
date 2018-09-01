@@ -1,4 +1,4 @@
-version: '3.2'
+version: "3.2"
 
 services:
   rrdcached:
@@ -9,15 +9,15 @@ services:
         published: 42217
         protocol: tcp
     volumes:
-      - rrdcached:/data
+      - "rrdcached:/data"
     environment:
-      - TZ=Europe/Paris
-      - PUID=1000
-      - GID=1000
-      - LOG_LEVEL=LOG_INFO
-      - WRITE_TIMEOUT=300
-      - WRITE_THREADS=4
-      - FLUSH_DEAD_DATA_INTERVAL=3600
+      - "TZ=Europe/Paris"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "LOG_LEVEL=LOG_INFO"
+      - "WRITE_TIMEOUT=300"
+      - "WRITE_THREADS=4"
+      - "FLUSH_DEAD_DATA_INTERVAL=3600"
     restart: always
 
 volumes:
