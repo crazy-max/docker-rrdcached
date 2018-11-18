@@ -6,6 +6,7 @@
   <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/stars/crazymax/rrdcached.svg?style=flat-square" alt="Docker Stars"></a>
   <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/pulls/crazymax/rrdcached.svg?style=flat-square" alt="Docker Pulls"></a>
   <a href="https://quay.io/repository/crazymax/rrdcached"><img src="https://quay.io/repository/crazymax/rrdcached/status?style=flat-square" alt="Docker Repository on Quay"></a>
+  <a href="https://www.codacy.com/app/crazy-max/docker-rrdcached"><img src="https://img.shields.io/codacy/grade/826c85b3ae99486e80784380422bcd0e.svg?style=flat-square" alt="Code Quality"></a>
   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4SU2HAJ75GW62"><img src="https://img.shields.io/badge/donate-paypal-7057ff.svg?style=flat-square" alt="Donate Paypal"></a>
 </p>
 
