@@ -15,22 +15,23 @@ LABEL maintainer="CrazyMax" \
   org.label-schema.vendor="CrazyMax" \
   org.label-schema.schema-version="1.0"
 
+ENV RRDCACHED_VERSION="1.7.0"
+
+COPY entrypoint.sh /entrypoint.sh
+COPY assets/ /
+
 RUN apk add --update --no-cache \
-    rrdtool-cached \
+    rrdtool-cached=${RRDCACHED_VERSION}-r0 \
     shadow \
-  && rm -rf /tmp/* /var/cache/apk/*
-
-ADD entrypoint.sh /entrypoint.sh
-ADD assets/ /
-
-RUN mkdir -p /data \
+  && mkdir -p /data \
   && chmod a+x /entrypoint.sh /usr/local/bin/* \
   && addgroup -g 1000 rrdcached \
   && adduser -u 1000 -G rrdcached -h /data -s /sbin/nologin -D rrdcached \
-  && chown -R rrdcached. /data
+  && chown -R rrdcached. /data \
+  && rm -rf /tmp/* /var/cache/apk/*
 
 EXPOSE 42217
-WORKDIR "/data"
+WORKDIR /data
 VOLUME [ "/data" ]
 
 ENTRYPOINT [ "/entrypoint.sh" ]
