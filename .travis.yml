@@ -5,50 +5,22 @@ services:
 
 env:
   global:
-    - VERSION=latest
-    - GITHUB_REPO=crazy-max/docker-rrdcached
+    - VERSION=1.7.0
+    - DOCKER_LOGIN=crazymax
     - DOCKER_USERNAME=crazymax
     - DOCKER_REPONAME=rrdcached
+    - QUAY_LOGIN=crazymax
     - QUAY_USERNAME=crazymax
     - QUAY_REPONAME=rrdcached
     - MICROBADGER_HOOK=https://hooks.microbadger.com/images/crazymax/rrdcached/wIYupJUM-TyNvHBnmsqZOGhsIx8=
     - secure: J7yWoRBh8VmFHs7w8fYXW1sF/nmwiIvG1Z+VgIhprLr3xoXX+fYYqu2eYbDPIPiBp9qimeZg4ByZYM1ohrtg4TlTwntO2df2Ud3DI1G3WO7aH6hMJa0N4YV3E27dJhirQnfCeVXvv/7hqtpNTLqnwuM2wjwdh+7Cojh0yrg3tyggFaU5KfGYiQVE3i8WzS3rJJWS5nEBS8t396f04MYnYgBgUtDK7yyf9J2zrMDYUrZp/Aj0XMHbFIQyEfKDBSTeK6K95de219x7ubw9mG7dedhsa4/foU/5yy609pFhkg7drPz2AhQkkgxAGsw5v5RDGr7ZbD7D6QnWjev3cPDZA/6VC6DZlQtVx0s+1Qkxu0NX2mMs+yi+71eHx65nkz4BVhsKRRdJjgwPA7dmeGiAqLXvVX5EmNODvQwHwaQW1md0NFLFbqf8FjGkfesMIv/A5eRSIh7FiAoAaF83+0t191ZWoEc6Hr5/zckObMjGTcYNTaGgXHNheYKQwzK3KaqkMFGRNqLQzspf8gopm9fP4hzXwjcZiprA4FOUp1eogcAfSJJSRpg5tPbAIEfpFt4ljZoYHCr93wxZ1CTnbCZ8lF9Fy7dVGdbHntu5xX5RrfNEMaCf3IxoNc64P0jtKUCLtnC3lD76UtG4K4dAzjUhiU0Il1J1lGOKtFybfDxe2MM= # DOCKER_PASSWORD
     - secure: XMYZ3MeV5ZozaXq81QorjrVLtOElmLekHU0WT700rcY2NQFH5AhtgNeLcSwI07Y7zPxjeNW3E2BayFpAslePfyKCC4dlwEo/+A4JS/g2GHTtvTZp2fMwPmNyWOmo6DRR0yHKuR3Xidrd7K/z/Q1uig/IlXYTqPBa5l89CeiCWwuLR5U8yTNyJdCnUe4SZIrX/0ugQwa4dSeNsGg2IbMr2FcisZG5w73HWsDUV7tgvRlKTtHAtVPy9E2/LqU4KQXII2DVGMQmX3LnLYIBsMbrg4F8ujba6HKMCp2TM95s0UcSWmn5jxTNfUJ70mGS9rGq9Ui9gwmtCkTUX8SS6G8+cNZrcBvsYMwce5p2w4xhYMEFWZzRKTKlJGULIW96yHdO2NWkWCqn57U8TgTiEe7p368AqQY2oQUbibffyhdtGllf8s4Kargd7HYUrSipLOal5s3/bygfqGK1EjxPZzXTYibw4Yk7i6P4t75GMAGqoQnVgcZ5mdZRhvnfZVtRyG9PzR0AQfd2b+n+vCTQeXR7Mngzik4XAA2ivWxcu+AZYtk96/WIjOGPyFHsARGD+yb2WdOsVJ8dKhgkKzt3UCaSdAJmThCpZshB2rQF4kJTsE7WFUcORTVQhFwvq5kNkwZFpodMGIVPnNxNtjMNFtZ2ExWR6BS8+mntyW++TBN9SXk= # QUAY_PASSWORD
-    - secure: MCuM9h/F5bvOzCwyG3yrxgXetUHiilF0tMIyErouxN/nN6cv5RnS7Lqc7HoB/M4/i5Cf1M2Mfcnl7c1WPHbUwBVs8fnp3z/HSg3vgdj7I60xJSbUCNOnw5nUw9Bac7E+kQAs3ya0bqxnoKAngSW9XdNW38VSCg8pYxvo9v6Jd4Tq2IOwucXMjDAXA5UWJHa16nlMEMrabZqUQl0F/K2AD+wK/STUhQeFAxw0ZtiI2PGYWWNrokvh/KEQFqOaedyZdh4Q57xi4eDYFgkp+WGnRv6YY99UfgnLVU0PcKBfhlQI9EdMU2p0wXQyGyBv5z+xm5CigeZMrg+fbMYP/VWKbJfneiiGlX9Kz+/3uHG43iu3yTMFmQYvm3ctre+ljrZixNU+By0KSbOgzOTHSYHJ7Q5t0W50pPUD/wxg84VeIKZ8rUTVw+7dAD+6pIyu6LEyL3gz83T1cZQpkHWqVhb69yxDCNdML2yyuT5Kdww8xEGTetpSza66NBkLF7O8Xgi1qcYho9H0aiiNsU69tkTyzdA3/RroIKZS9a1Rhw9UR5++yoxcswfA0J2OvBT+ZbgrrnXpkSq/Y8tEO5NWLZFgfgFG8WimE2Uz3DaeBkDzQIsa4xtfvVNuBWG7WJ6FR/GU6AIaExJB3I5yWIGPE148cD/x+S+LZwqpdemx5ErMETM= # GITHUB_TOKEN
 
 before_install:
   - sudo apt-get update
   - docker --version
-  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH, DOCKER_TAG=$VERSION"
 
-install:
-  - |
-    docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-    --build-arg VCS_REF=${TRAVIS_COMMIT::8} \
-    --build-arg VERSION=${VERSION} \
-    -t docker_build .
-
-before_script:
-  - docker run -d --name $DOCKER_REPONAME docker_build
-  - sleep 5
-  - docker logs $DOCKER_REPONAME
-
-script:
-  - docker ps | grep $DOCKER_REPONAME
-  - |
-    test $TRAVIS_PULL_REQUEST = false \
-    && echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin \
-    && docker tag docker_build $DOCKER_USERNAME/$DOCKER_REPONAME:$VERSION \
-    && docker push $DOCKER_USERNAME/$DOCKER_REPONAME \
-    && curl -X POST $MICROBADGER_HOOK \
-    && echo "$QUAY_PASSWORD" | docker login quay.io --username "$QUAY_USERNAME" --password-stdin \
-    && docker tag docker_build quay.io/$DOCKER_USERNAME/$DOCKER_REPONAME:$VERSION \
-    && docker push quay.io/$QUAY_USERNAME/$QUAY_REPONAME
-
-branches:
-  except:
-    - /^[0-9]/
+script: ./build.sh
 
 notifications:
   webhooks:
