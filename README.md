@@ -1,7 +1,7 @@
 <p align="center"><a href="https://github.com/crazy-max/docker-rrdcached" target="_blank"><img height="128"src="https://raw.githubusercontent.com/crazy-max/docker-rrdcached/master/.res/docker-rrdcached.jpg"></a></p>
 
 <p align="center">
-  <a href="https://microbadger.com/images/crazymax/rrdcached"><img src="https://images.microbadger.com/badges/version/crazymax/rrdcached.svg?style=flat-square" alt="Version"></a>
+  <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&query=$.results[1].name&url=https://hub.docker.com/v2/repositories/crazymax/rrdcached/tags&style=flat-square" alt="Latest Version"></a>
   <a href="https://travis-ci.com/crazy-max/docker-rrdcached"><img src="https://img.shields.io/travis/com/crazy-max/docker-rrdcached/master.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/stars/crazymax/rrdcached.svg?style=flat-square" alt="Docker Stars"></a>
   <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/pulls/crazymax/rrdcached.svg?style=flat-square" alt="Docker Pulls"></a>
