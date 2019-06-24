@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -15,7 +15,7 @@ LABEL maintainer="CrazyMax" \
   org.label-schema.vendor="CrazyMax" \
   org.label-schema.schema-version="1.0"
 
-ENV RRDCACHED_VERSION="1.7.0"
+ENV RRDCACHED_VERSION="1.7.2"
 
 COPY entrypoint.sh /entrypoint.sh
 COPY assets/ /

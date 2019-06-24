@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.2-RC1 (2019/06/24)
+
+* RRDtool cached 1.7.2
+* Alpine Linux 3.10
+
 ## 1.7.0-RC2 (2019/01/31)
 
 * Alpine Linux 3.9
