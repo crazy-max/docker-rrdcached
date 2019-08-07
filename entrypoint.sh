@@ -19,7 +19,7 @@ if [ $(id -g rrdcached) != ${PGID} ]; then
 fi
 
 # Init files and folders
-echo "Initializing LibreNMS files / folders..."
+echo "Initializing RRDcached files / folders..."
 mkdir -p /data/db /data/journal
 
 # RRDcached config

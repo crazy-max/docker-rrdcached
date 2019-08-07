@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2-RC2 (2019/08/07)
+
+* Add healthcheck
+
 ## 1.7.2-RC1 (2019/06/24)
 
 * RRDtool cached 1.7.2
