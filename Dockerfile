@@ -23,7 +23,7 @@ COPY assets/ /
 RUN apk add --update --no-cache \
     rrdtool-cached=${RRDCACHED_VERSION}-r0 \
     shadow \
-  && mkdir -p /data /data/db /data/journal \
+  && mkdir -p /data \
   && chmod a+x /entrypoint.sh /usr/local/bin/* \
   && addgroup -g 1000 rrdcached \
   && adduser -u 1000 -G rrdcached -h /data -s /sbin/nologin -D rrdcached \

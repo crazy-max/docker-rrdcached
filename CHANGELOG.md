@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2-RC4 (2019/08/17)
+
+* Fix journal issue
+
 ## 1.7.2-RC3 (2019/08/17)
 
 * No need to chown `/data`

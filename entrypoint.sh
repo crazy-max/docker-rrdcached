@@ -7,6 +7,11 @@ echo "Setting timezone to ${TZ}..."
 ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
 echo ${TZ} > /etc/timezone
 
+# RRDcached init
+echo "Initializing RRDcached..."
+mkdir -p /data/db /data/journal
+chown rrdcached. /data /data/db /data/journal
+
 # RRDcached config
 echo "Creating RRDcached configuration..."
 cat > /etc/rrdcached.conf <<EOL
