@@ -12,8 +12,6 @@ services:
       - "rrdcached:/data"
     environment:
       - "TZ=Europe/Paris"
-      - "PUID=1000"
-      - "PGID=1000"
       - "LOG_LEVEL=LOG_INFO"
       - "WRITE_TIMEOUT=300"
       - "WRITE_THREADS=4"

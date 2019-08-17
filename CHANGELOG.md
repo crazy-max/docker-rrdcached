@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.2-RC3 (2019/08/17)
+
+* No need to chown `/data`
+* Remove `PUID` / `PGID` vars
+
 ## 1.7.2-RC2 (2019/08/07)
 
 * Add healthcheck
