@@ -7,8 +7,8 @@
   <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/pulls/crazymax/rrdcached.svg?style=flat-square" alt="Docker Pulls"></a>
   <a href="https://quay.io/repository/crazymax/rrdcached"><img src="https://quay.io/repository/crazymax/rrdcached/status?style=flat-square" alt="Docker Repository on Quay"></a>
   <a href="https://www.codacy.com/app/crazy-max/docker-rrdcached"><img src="https://img.shields.io/codacy/grade/826c85b3ae99486e80784380422bcd0e.svg?style=flat-square" alt="Code Quality"></a>
-  <br /><a href="https://www.patreon.com/crazymax"><img src="https://img.shields.io/badge/donate-patreon-fb664e.svg?style=flat-square" alt="Support me on Patreon"></a>
-  <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-7057ff.svg?style=flat-square" alt="Donate Paypal"></a>
+  <br /><a href="https://www.patreon.com/crazymax"><img src="https://img.shields.io/badge/donate-patreon-f96854.svg?logo=patreon&style=flat-square" alt="Support me on Patreon"></a>
+  <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square" alt="Donate Paypal"></a>
 </p>
 
 ## About
@@ -23,6 +23,8 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 ### Environment variables
 
 * `TZ` : Timezone assigned to the container (default `UTC`)
+* `PUID` : Daemon user id (default `1000`)
+* `PGID` : Daemon group id (default `1000`)
 * `LOG_LEVEL` : Log level, called with `-V` (default `LOG_INFO`)
 * `WRITE_TIMEOUT` : Data is written to disk every *X* seconds, called with `-w` (default `300`)
 * `WRITE_JITTER` : Delay writing of each RRD for a random number of seconds in the range, called with `-z`
@@ -33,7 +35,10 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 
 ### Volumes
 
-* `/data` : Contains rrd database
+* `/data/db` : Contains rrd database
+* `/data/journal` :  Container rrd journal files
+
+> :warning: Note that the volumes should be owned by the user/group with the PUID/PGID specified. If you don’t give the volume correct permissions, the container may not start. 
 
 ### Ports
 
@@ -57,7 +62,8 @@ You can also use the following minimal command :
 ```bash
 $ docker run -d -p 42217:42217 --name rrdcached \
   -e TZ="Europe/Paris" \
-  -v $(pwd)/data:/data \
+  -v $(pwd)/data/db:/data/db \
+  -v $(pwd)/data/journal:/data/journal \
   crazymax/rrdcached
 ```
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.2-RC5 (2019/09/14)
+
+* Split db and journal volumes
+* Add `PUID` / `PGID` vars
+
 ## 1.7.2-RC4 (2019/08/17)
 
 * Fix journal issue

@@ -9,7 +9,8 @@ services:
         published: 42217
         protocol: tcp
     volumes:
-      - "rrdcached:/data"
+      - "rrdcached-db:/data/db"
+      - "rrdcached-journal:/data/journal"
     environment:
       - "TZ=Europe/Paris"
       - "LOG_LEVEL=LOG_INFO"
@@ -19,4 +20,5 @@ services:
     restart: always
 
 volumes:
-  rrdcached:
+  rrdcached-db:
+  rrdcached-journal:
