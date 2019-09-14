@@ -48,7 +48,7 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 
 ### Docker Compose
 
-Docker compose is the recommended way to run this image. You can use the following [docker compose template](examples/compose/docker-compose.yml), then run the container :
+Docker compose is the recommended way to run this image. You can use the following [docker compose template](examples/compose/docker-compose.yml), then run the container:
 
 ```bash
 docker-compose up -d
@@ -57,7 +57,7 @@ docker-compose logs -f
 
 ### Command line
 
-You can also use the following minimal command :
+You can also use the following minimal command:
 
 ```bash
 $ docker run -d -p 42217:42217 --name rrdcached \
@@ -69,7 +69,7 @@ $ docker run -d -p 42217:42217 --name rrdcached \
 
 ## Update
 
-Recreate the container whenever i push an update :
+Recreate the container whenever I push an update:
 
 ```bash
 docker-compose pull
