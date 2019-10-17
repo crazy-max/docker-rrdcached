@@ -13,7 +13,8 @@ LABEL maintainer="CrazyMax" \
   org.label-schema.vendor="CrazyMax" \
   org.label-schema.schema-version="1.0"
 
-ENV RRDCACHED_VERSION="1.7.2"
+ENV RRDCACHED_VERSION="1.7.2" \
+  TZ="UTC"
 
 COPY entrypoint.sh /entrypoint.sh
 COPY assets/ /
@@ -21,6 +22,7 @@ COPY assets/ /
 RUN apk add --update --no-cache \
     rrdtool-cached=${RRDCACHED_VERSION}-r0 \
     shadow \
+    tzdata \
   && chmod a+x /entrypoint.sh /usr/local/bin/* \
   && addgroup -g 1000 rrdcached \
   && adduser -u 1000 -G rrdcached -h /data -s /sbin/nologin -D rrdcached \

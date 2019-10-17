@@ -1,15 +1,8 @@
 #!/bin/sh
 
-TZ=${TZ:-UTC}
-
 USER=rrdcached
 PUID=${PUID:-1000}
 PGID=${PGID:-1000}
-
-# Timezone
-echo "Setting timezone to ${TZ}..."
-ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
-echo ${TZ} > /etc/timezone
 
 # Change rrdcached UID / GID
 echo "Checking if rrdcached UID / GID has changed..."
