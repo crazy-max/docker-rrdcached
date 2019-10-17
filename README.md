@@ -23,8 +23,6 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 ### Environment variables
 
 * `TZ` : Timezone assigned to the container (default `UTC`)
-* `PUID` : Daemon user id (default `1000`)
-* `PGID` : Daemon group id (default `1000`)
 * `LOG_LEVEL` : Log level, called with `-V` (default `LOG_INFO`)
 * `WRITE_TIMEOUT` : Data is written to disk every *X* seconds, called with `-w` (default `300`)
 * `WRITE_JITTER` : Delay writing of each RRD for a random number of seconds in the range, called with `-z`
@@ -38,13 +36,13 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 * `/data/db` : Contains rrd database
 * `/data/journal` :  Container rrd journal files
 
-> :warning: Note that the volumes should be owned by the user/group with the PUID/PGID specified. If you don’t give the volume correct permissions, the container may not start. 
+> :warning: Note that the volumes should be owned by uid `1000` and gid `1000`. If you don't give the volumes correct permissions, the container may not start.
 
 ### Ports
 
 * `42217` : RRDcached port
 
-## Use this image
+## Usage
 
 ### Docker Compose
 

@@ -25,8 +25,20 @@ RUN apk add --update --no-cache \
     tzdata \
   && chmod a+x /entrypoint.sh /usr/local/bin/* \
   && addgroup -g 1000 rrdcached \
-  && adduser -u 1000 -G rrdcached -h /data -s /sbin/nologin -D rrdcached \
+  && adduser -D -H -u 1000 -G rrdcached -s /bin/sh rrdcached \
+  && mkdir -p \
+    /data/db \
+    /data/journal \
+    /etc/rrdcached \
+    /var/run/rrdcached \
+  && chown -R rrdcached. \
+    /data/db \
+    /data/journal \
+    /etc/rrdcached \
+    /var/run/rrdcached \
   && rm -rf /tmp/* /var/cache/apk/*
+
+USER rrdcached
 
 EXPOSE 42217
 WORKDIR /data

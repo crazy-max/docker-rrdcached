@@ -1,7 +1,8 @@
 #!/bin/sh
-
 set -e
-source /etc/rrdcached.conf
+
+# shellcheck disable=SC1091
+. /etc/rrdcached/rrdcached.conf
 
 JITTER=""
 if [ "${WRITE_JITTER}" -gt "0" ]; then
@@ -14,14 +15,14 @@ exec /usr/sbin/rrdcached \
   -F \
   -B \
   -R \
-  -l /tmp/rrdcached.sock \
-  -p /tmp/rrdcached.pid \
+  -l /var/run/rrdcached/rrdcached.sock \
+  -p /var/run/rrdcached/rrdcached.pid \
   -b /data/db \
   -j /data/journal \
   -U rrdcached \
   -G rrdcached \
-  -w ${WRITE_TIMEOUT} \
-  ${JITTER} \
-  -f ${FLUSH_DEAD_DATA_INTERVAL} \
-  -t ${WRITE_THREADS} \
-  -V ${LOG_LEVEL}
+  -w "${WRITE_TIMEOUT}" \
+  "${JITTER}" \
+  -f "${FLUSH_DEAD_DATA_INTERVAL}" \
+  -t "${WRITE_THREADS}" \
+  -V "${LOG_LEVEL}"

@@ -1,27 +1,8 @@
 #!/bin/sh
 
-USER=rrdcached
-PUID=${PUID:-1000}
-PGID=${PGID:-1000}
-
-# Change rrdcached UID / GID
-echo "Checking if rrdcached UID / GID has changed..."
-if [ -n "${PGID}" ] && [ "${PGID}" != "`id -g ${USER}`" ]; then
-  sed -i -e "s/^${USER}:\([^:]*\):[0-9]*/${USER}:\1:${PGID}/" /etc/group
-  sed -i -e "s/^${USER}:\([^:]*\):\([0-9]*\):[0-9]*/${USER}:\1:\2:${PGID}/" /etc/passwd
-fi
-if [ -n "${PUID}" ] && [ "${PUID}" != "`id -u ${USER}`" ]; then
-  sed -i -e "s/^${USER}:\([^:]*\):[0-9]*:\([0-9]*\)/${USER}:\1:${PUID}:\2/" /etc/passwd
-fi
-
-# RRDcached init
-echo "Initializing RRDcached..."
-mkdir -p /data/db /data/journal
-chown ${USER}. /data /data/db /data/journal
-
 # RRDcached config
 echo "Creating RRDcached configuration..."
-cat > /etc/rrdcached.conf <<EOL
+cat > /etc/rrdcached/rrdcached.conf <<EOL
 LOG_LEVEL=${LOG_LEVEL:-LOG_INFO}
 WRITE_TIMEOUT=${WRITE_TIMEOUT:-300}
 WRITE_JITTER=${WRITE_JITTER:-0}
