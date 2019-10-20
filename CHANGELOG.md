@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2-RC7 (2019/10/20)
+
+* Fix `WRITE_JITTER`
+
 ## 1.7.2-RC6 (2019/10/17)
 
 * Switch to GitHub Actions

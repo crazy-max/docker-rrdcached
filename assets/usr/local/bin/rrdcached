@@ -22,7 +22,7 @@ exec /usr/sbin/rrdcached \
   -U rrdcached \
   -G rrdcached \
   -w "${WRITE_TIMEOUT}" \
-  "${JITTER}" \
+  ${JITTER} \
   -f "${FLUSH_DEAD_DATA_INTERVAL}" \
   -t "${WRITE_THREADS}" \
   -V "${LOG_LEVEL}"
