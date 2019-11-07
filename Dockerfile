@@ -21,7 +21,9 @@ LABEL maintainer="CrazyMax" \
   org.label-schema.schema-version="1.0"
 
 ENV RRDCACHED_VERSION="1.7.2" \
-  TZ="UTC"
+  TZ="UTC" \
+  PUID="1000" \
+  PGID="1000"
 
 COPY entrypoint.sh /entrypoint.sh
 COPY assets/ /
@@ -29,10 +31,11 @@ COPY assets/ /
 RUN apk add --update --no-cache \
     rrdtool-cached=${RRDCACHED_VERSION}-r0 \
     shadow \
+    su-exec \
     tzdata \
   && chmod a+x /entrypoint.sh /usr/local/bin/* \
-  && addgroup -g 1000 rrdcached \
-  && adduser -D -H -u 1000 -G rrdcached -s /bin/sh rrdcached \
+  && addgroup -g ${PUID} rrdcached \
+  && adduser -D -H -u ${PGID} -G rrdcached -s /bin/sh rrdcached \
   && mkdir -p \
     /data/db \
     /data/journal \
@@ -44,8 +47,6 @@ RUN apk add --update --no-cache \
     /etc/rrdcached \
     /var/run/rrdcached \
   && rm -rf /tmp/* /var/cache/apk/*
-
-USER rrdcached
 
 EXPOSE 42217
 WORKDIR /data

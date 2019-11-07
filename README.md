@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/crazy-max/docker-rrdcached" target="_blank"><img height="128"src="https://raw.githubusercontent.com/crazy-max/docker-rrdcached/master/.res/docker-rrdcached.jpg"></a></p>
+<p align="center"><a href="https://github.com/crazy-max/docker-rrdcached" target="_blank"><img height="128" src="https://raw.githubusercontent.com/crazy-max/docker-rrdcached/master/.res/docker-rrdcached.jpg"></a></p>
 
 <p align="center">
   <a href="https://hub.docker.com/r/crazymax/rrdcached/tags?page=1&ordering=last_updated"><img src="https://img.shields.io/github/v/tag/crazy-max/docker-rrdcached?label=version&style=flat-square" alt="Latest Version"></a>
@@ -12,7 +12,7 @@
 
 ## About
 
-🐳 [RRDcached](https://oss.oetiker.ch/rrdtool/doc/rrdcached.en.html) image based on Alpine Linux.<br />
+🐳 [RRDcached](https://oss.oetiker.ch/rrdtool/doc/rrdcached.en.html) Docker image based on Alpine Linux.<br />
 If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 🐳 Docker images!
 
 💡 Want to be notified of new releases? Check out 🔔 [Diun (Docker Image Update Notifier)](https://github.com/crazy-max/diun) project!
@@ -45,6 +45,8 @@ Image: crazymax/rrdcached:latest
 ### Environment variables
 
 * `TZ` : Timezone assigned to the container (default `UTC`)
+* `PUID` : Daemon user id (default `1000`)
+* `PGID` : Daemon group id (default `1000`)
 * `LOG_LEVEL` : Log level, called with `-V` (default `LOG_INFO`)
 * `WRITE_TIMEOUT` : Data is written to disk every *X* seconds, called with `-w` (default `300`)
 * `WRITE_JITTER` : Delay writing of each RRD for a random number of seconds in the range, called with `-z`
@@ -58,7 +60,7 @@ Image: crazymax/rrdcached:latest
 * `/data/db` : Contains rrd database
 * `/data/journal` :  Container rrd journal files
 
-> :warning: Note that the volumes should be owned by uid `1000` and gid `1000`. If you don't give the volumes correct permissions, the container may not start.
+> :warning: Note that the volumes should be owned by the user/group with the specified `PUID` and `PGID`. If you don't give the volume correct permissions, the container may not start.
 
 ### Ports
 

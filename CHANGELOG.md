@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2-RC8 (2019/11/07)
+
+* Bring back `PUID`/`PGID` vars
+
 ## 1.7.2-RC7 (2019/10/20)
 
 * Fix `WRITE_JITTER`
@@ -23,7 +27,7 @@
 ## 1.7.2-RC5 (2019/09/14)
 
 * Split db and journal volumes
-* Add `PUID` / `PGID` vars
+* Add `PUID`/`PGID` vars
 
 ## 1.7.2-RC4 (2019/08/17)
 
@@ -32,7 +36,7 @@
 ## 1.7.2-RC3 (2019/08/17)
 
 * No need to chown `/data`
-* Remove `PUID` / `PGID` vars
+* Remove `PUID`/`PGID` vars
 
 ## 1.7.2-RC2 (2019/08/07)
 
