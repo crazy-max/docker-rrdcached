@@ -34,8 +34,8 @@ RUN apk add --update --no-cache \
     su-exec \
     tzdata \
   && chmod a+x /entrypoint.sh /usr/local/bin/* \
-  && addgroup -g ${PUID} rrdcached \
-  && adduser -D -H -u ${PGID} -G rrdcached -s /bin/sh rrdcached \
+  && addgroup -g ${PGID} rrdcached \
+  && adduser -D -H -u ${PUID} -G rrdcached -s /bin/sh rrdcached \
   && mkdir -p \
     /data/db \
     /data/journal \
