@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.2-r3-RC1 (2020/04/04)
+
+* RRDtool cached 1.7.2-r3
+* Alpine Linux 3.11
+* Switch to Open Container Specification labels as label-schema.org ones are deprecated
+
 ## 1.7.2-RC8 (2019/11/07)
 
 * Bring back `PUID`/`PGID` vars

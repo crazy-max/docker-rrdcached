@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:experimental
-FROM --platform=${TARGETPLATFORM:-linux/amd64} alpine:3.10
+FROM --platform=${TARGETPLATFORM:-linux/amd64} alpine:3.11
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -10,17 +10,18 @@ ARG BUILDPLATFORM
 RUN printf "I am running on ${BUILDPLATFORM:-linux/amd64}, building for ${TARGETPLATFORM:-linux/amd64}\n$(uname -a)\n"
 
 LABEL maintainer="CrazyMax" \
-  org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.name="rrdcached" \
-  org.label-schema.description="RRDcached" \
-  org.label-schema.version=$VERSION \
-  org.label-schema.url="https://github.com/crazy-max/docker-rrdcached" \
-  org.label-schema.vcs-ref=$VCS_REF \
-  org.label-schema.vcs-url="https://github.com/crazy-max/docker-rrdcached" \
-  org.label-schema.vendor="CrazyMax" \
-  org.label-schema.schema-version="1.0"
+  org.opencontainers.image.created=$BUILD_DATE \
+  org.opencontainers.image.url="https://github.com/crazy-max/docker-rrdcached" \
+  org.opencontainers.image.source="https://github.com/crazy-max/docker-rrdcached" \
+  org.opencontainers.image.version=$VERSION \
+  org.opencontainers.image.revision=$VCS_REF \
+  org.opencontainers.image.vendor="CrazyMax" \
+  org.opencontainers.image.title="RRDcached" \
+  org.opencontainers.image.description="RRDtool data caching daemon" \
+  org.opencontainers.image.licenses="MIT"
 
 ENV RRDCACHED_VERSION="1.7.2" \
+  RRDCACHED_RELEASE="r3" \
   TZ="UTC" \
   PUID="1000" \
   PGID="1000"
@@ -29,7 +30,7 @@ COPY entrypoint.sh /entrypoint.sh
 COPY assets/ /
 
 RUN apk add --update --no-cache \
-    rrdtool-cached=${RRDCACHED_VERSION}-r0 \
+    rrdtool-cached=${RRDCACHED_VERSION}-${RRDCACHED_RELEASE} \
     shadow \
     su-exec \
     tzdata \
