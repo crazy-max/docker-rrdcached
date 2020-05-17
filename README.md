@@ -2,9 +2,9 @@
 
 <p align="center">
   <a href="https://hub.docker.com/r/crazymax/rrdcached/tags?page=1&ordering=last_updated"><img src="https://img.shields.io/github/v/tag/crazy-max/docker-rrdcached?label=version&style=flat-square" alt="Latest Version"></a>
-  <a href="https://github.com/crazy-max/docker-rrdcached/actions?workflow=build"><img src="https://github.com/crazy-max/docker-rrdcached/workflows/build/badge.svg" alt="Build Status"></a>
-  <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/stars/crazymax/rrdcached.svg?style=flat-square" alt="Docker Stars"></a>
-  <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/pulls/crazymax/rrdcached.svg?style=flat-square" alt="Docker Pulls"></a>
+  <a href="https://github.com/crazy-max/docker-rrdcached/actions?workflow=build"><img src="https://img.shields.io/github/workflow/status/crazy-max/docker-rrdcached/build?label=build&logo=github&style=flat-square" alt="Build Status"></a>
+  <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/stars/crazymax/rrdcached.svg?style=flat-square&logo=docker" alt="Docker Stars"></a>
+  <a href="https://hub.docker.com/r/crazymax/rrdcached/"><img src="https://img.shields.io/docker/pulls/crazymax/rrdcached.svg?style=flat-square&logo=docker" alt="Docker Pulls"></a>
   <a href="https://www.codacy.com/app/crazy-max/docker-rrdcached"><img src="https://img.shields.io/codacy/grade/826c85b3ae99486e80784380422bcd0e.svg?style=flat-square" alt="Code Quality"></a>
   <br /><a href="https://github.com/sponsors/crazy-max"><img src="https://img.shields.io/badge/sponsor-crazy--max-181717.svg?logo=github&style=flat-square" alt="Become a sponsor"></a>
   <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square" alt="Donate Paypal"></a>
