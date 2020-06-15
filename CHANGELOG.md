@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2-r3-RC2 (2020/06/15)
+
+* Alpine Linux 3.12
+
 ## 1.7.2-r3-RC1 (2020/04/04)
 
 * RRDtool cached 1.7.2-r3
