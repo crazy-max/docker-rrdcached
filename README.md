@@ -13,7 +13,7 @@
 ## About
 
 🐳 [RRDcached](https://oss.oetiker.ch/rrdtool/doc/rrdcached.en.html) Docker image based on Alpine Linux.<br />
-If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 🐳 Docker images!
+If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other Docker images!
 
 💡 Want to be notified of new releases? Check out 🔔 [Diun (Docker Image Update Notifier)](https://github.com/crazy-max/diun) project!
 
@@ -22,9 +22,7 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 * Run as non-root user
 * Multi-platform image
 
-## Docker
-
-### Multi-platform image
+## Multi-platform image
 
 Following platforms for this image are available:
 
@@ -42,7 +40,7 @@ Image: crazymax/rrdcached:latest
    - linux/s390x
 ```
 
-### Environment variables
+## Environment variables
 
 * `TZ` : Timezone assigned to the container (default `UTC`)
 * `PUID` : Daemon user id (default `1000`)
@@ -55,14 +53,14 @@ Image: crazymax/rrdcached:latest
 
 > More info : https://github.com/oetiker/rrdtool-1.x/blob/master/doc/rrdcached.pod
 
-### Volumes
+## Volumes
 
 * `/data/db` : Contains rrd database
 * `/data/journal` :  Container rrd journal files
 
 > :warning: Note that the volumes should be owned by the user/group with the specified `PUID` and `PGID`. If you don't give the volume correct permissions, the container may not start.
 
-### Ports
+## Ports
 
 * `42217` : RRDcached port
 
@@ -89,7 +87,7 @@ $ docker run -d -p 42217:42217 --name rrdcached \
   crazymax/rrdcached
 ```
 
-## Update
+## Upgrade
 
 Recreate the container whenever I push an update:
 
@@ -98,7 +96,7 @@ docker-compose pull
 docker-compose up -d
 ```
 
-## How can I help ?
+## How can I help?
 
 All kinds of contributions are welcome :raised_hands:! The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon: You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) :clap: or by making a [Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely! :rocket:
 
