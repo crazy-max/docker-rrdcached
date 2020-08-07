@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2-r3-RC3 (2020/08/07)
+
+* Set up healthcheck start period (#8)
+
 ## 1.7.2-r3-RC2 (2020/06/15)
 
 * Alpine Linux 3.12
