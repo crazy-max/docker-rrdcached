@@ -46,7 +46,6 @@ RUN apk add --update --no-cache \
     /data/journal \
     /etc/rrdcached \
     /var/run/rrdcached \
-  && /usr/sbin/rrdcached --help \
   && rm -rf /tmp/* /var/cache/apk/*
 
 EXPOSE 42217
