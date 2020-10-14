@@ -1,4 +1,4 @@
-FROM --platform=${TARGETPLATFORM:-linux/amd64} alpine:3.12
+FROM --platform=${TARGETPLATFORM:-linux/amd64} crazymax/alpine-s6:3.12
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -25,35 +25,21 @@ ENV RRDCACHED_VERSION="1.7.2" \
   PUID="1000" \
   PGID="1000"
 
-COPY entrypoint.sh /entrypoint.sh
-COPY assets/ /
-
 RUN apk add --update --no-cache \
+    bash \
     rrdtool-cached=${RRDCACHED_VERSION}-${RRDCACHED_RELEASE} \
     shadow \
     su-exec \
     tzdata \
-  && chmod a+x /entrypoint.sh /usr/local/bin/* \
   && addgroup -g ${PGID} rrdcached \
   && adduser -D -H -u ${PUID} -G rrdcached -s /bin/sh rrdcached \
-  && mkdir -p \
-    /data/db \
-    /data/journal \
-    /etc/rrdcached \
-    /var/run/rrdcached \
-  && chown -R rrdcached. \
-    /data/db \
-    /data/journal \
-    /etc/rrdcached \
-    /var/run/rrdcached \
   && rm -rf /tmp/* /var/cache/apk/*
+
+COPY rootfs /
 
 EXPOSE 42217
 WORKDIR /data
 VOLUME [ "/data/db", "/data/journal" ]
-
-ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "/usr/local/bin/rrdcached" ]
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5m \
   CMD echo PING | nc 127.0.0.1 42217 | grep PONG || exit 1
