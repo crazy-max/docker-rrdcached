@@ -16,12 +16,34 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 
 💡 Want to be notified of new releases? Check out 🔔 [Diun (Docker Image Update Notifier)](https://github.com/crazy-max/diun) project!
 
+___
+
+* [Features](#features)
+* [Docker](#docker)
+  * [Image](#image)
+  * [Environment variables](#environment-variables)
+  * [Volumes](#volumes)
+  * [Ports](#ports)
+* [Usage](#usage)
+  * [Docker Compose](#docker-compose)
+  * [Command line](#command-line)
+* [Upgrade](#upgrade)
+* [How can I help?](#how-can-i-help)
+* [License](#license)
+
 ## Features
 
 * Run as non-root user
 * Multi-platform image
 
-## Multi-platform image
+## Docker
+
+### Image
+
+| Registry                                                                                         | Image                           |
+|--------------------------------------------------------------------------------------------------|---------------------------------|
+| [Docker Hub](https://hub.docker.com/r/crazymax/rrdcached/)                                            | `crazymax/rrdcached`                 |
+| [GitHub Container Registry](https://github.com/users/crazy-max/packages/container/package/rrdcached)  | `ghcr.io/crazy-max/rrdcached`        |
 
 Following platforms for this image are available:
 
@@ -39,7 +61,7 @@ Image: crazymax/rrdcached:latest
    - linux/s390x
 ```
 
-## Environment variables
+### Environment variables
 
 * `TZ` : Timezone assigned to the container (default `UTC`)
 * `PUID` : Daemon user id (default `1000`)
@@ -52,14 +74,15 @@ Image: crazymax/rrdcached:latest
 
 > More info : https://github.com/oetiker/rrdtool-1.x/blob/master/doc/rrdcached.pod
 
-## Volumes
+### Volumes
 
 * `/data/db` : Contains rrd database
 * `/data/journal` :  Container rrd journal files
 
-> :warning: Note that the volumes should be owned by the user/group with the specified `PUID` and `PGID`. If you don't give the volume correct permissions, the container may not start.
+> :warning: Note that the volumes should be owned by the user/group with the specified `PUID` and `PGID`.
+> If you don't give the volume correct permissions, the container may not start.
 
-## Ports
+### Ports
 
 * `42217` : RRDcached port
 
@@ -67,7 +90,8 @@ Image: crazymax/rrdcached:latest
 
 ### Docker Compose
 
-Docker compose is the recommended way to run this image. You can use the following [docker compose template](examples/compose/docker-compose.yml), then run the container:
+Docker compose is the recommended way to run this image. You can use the following
+[docker compose template](examples/compose/docker-compose.yml), then run the container:
 
 ```bash
 docker-compose up -d
@@ -97,7 +121,10 @@ docker-compose up -d
 
 ## How can I help?
 
-All kinds of contributions are welcome :raised_hands:! The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon: You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) :clap: or by making a [Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely! :rocket:
+All kinds of contributions are welcome :raised_hands:! The most basic way to show your support is to star :star2:
+the project, or to raise issues :speech_balloon: You can also support this project by
+[**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) :clap: or by making
+a [Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely! :rocket:
 
 Thanks again for your support, it is much appreciated! :pray:
 
