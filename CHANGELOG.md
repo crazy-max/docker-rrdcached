@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2-r3-RC4 (2020/11/08)
+
+* Switch to s6-overlay and log through socklog-overlay
+
 ## 1.7.2-r3-RC3 (2020/08/07)
 
 * Set up healthcheck start period (#8)
