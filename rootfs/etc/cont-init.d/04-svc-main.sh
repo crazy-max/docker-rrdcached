@@ -11,6 +11,7 @@ if [ "${WRITE_JITTER}" -gt "0" ]; then
   JITTER="-z ${WRITE_JITTER}"
 fi
 
+# https://oss.oetiker.ch/rrdtool/doc/rrdcached.en.html
 mkdir -p /etc/services.d/rrdcached
 cat > /etc/services.d/rrdcached/run <<EOL
 #!/usr/bin/execlineb -P
@@ -21,7 +22,7 @@ with-contenv
   -F \
   -B \
   -R \
-  -l /var/run/rrdcached/rrdcached.sock \
+  -l :42217 \
   -p /var/run/rrdcached/rrdcached.pid \
   -b /data/db \
   -j /data/journal \
