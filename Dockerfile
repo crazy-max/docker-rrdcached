@@ -1,7 +1,7 @@
 ARG RRDCACHED_VERSION="1.7.2"
-ARG RRDCACHED_RELEASE="r3"
+ARG RRDCACHED_RELEASE="r4"
 
-FROM --platform=${TARGETPLATFORM:-linux/amd64} crazymax/alpine-s6:3.12
+FROM --platform=${TARGETPLATFORM:-linux/amd64} crazymax/alpine-s6:3.13-2.2.0.3
 LABEL maintainer="CrazyMax"
 
 ARG RRDCACHED_VERSION
