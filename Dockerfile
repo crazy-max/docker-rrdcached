@@ -1,14 +1,13 @@
+ARG RRDCACHED_VERSION="1.7.2"
+ARG RRDCACHED_RELEASE="r3"
+
 FROM --platform=${TARGETPLATFORM:-linux/amd64} crazymax/alpine-s6:3.12
-
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
-RUN printf "I am running on ${BUILDPLATFORM:-linux/amd64}, building for ${TARGETPLATFORM:-linux/amd64}\n$(uname -a)\n"
-
 LABEL maintainer="CrazyMax"
 
-ENV RRDCACHED_VERSION="1.7.2" \
-  RRDCACHED_RELEASE="r3" \
-  TZ="UTC" \
+ARG RRDCACHED_VERSION
+ARG RRDCACHED_RELEASE
+
+ENV TZ="UTC" \
   PUID="1000" \
   PGID="1000"
 

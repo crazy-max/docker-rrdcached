@@ -19,11 +19,11 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 ___
 
 * [Features](#features)
-* [Docker](#docker)
-  * [Image](#image)
-  * [Environment variables](#environment-variables)
-  * [Volumes](#volumes)
-  * [Ports](#ports)
+* [Build locally](#build-locally)
+* [Image](#image)
+* [Environment variables](#environment-variables)
+* [Volumes](#volumes)
+* [Ports](#ports)
 * [Usage](#usage)
   * [Docker Compose](#docker-compose)
   * [Command line](#command-line)
@@ -36,9 +36,20 @@ ___
 * Run as non-root user
 * Multi-platform image
 
-## Docker
+### Build locally
 
-### Image
+```shell
+git clone https://github.com/crazy-max/docker-rrdcached.git
+cd docker-rrdcached
+
+# Build image and output to docker (default)
+docker buildx bake
+
+# Build multi-platform image
+docker buildx bake image-all
+```
+
+## Image
 
 | Registry                                                                                         | Image                           |
 |--------------------------------------------------------------------------------------------------|---------------------------------|
@@ -61,7 +72,7 @@ Image: crazymax/rrdcached:latest
    - linux/s390x
 ```
 
-### Environment variables
+## Environment variables
 
 * `TZ` : Timezone assigned to the container (default `UTC`)
 * `PUID` : Daemon user id (default `1000`)
@@ -74,7 +85,7 @@ Image: crazymax/rrdcached:latest
 
 > More info : https://github.com/oetiker/rrdtool-1.x/blob/master/doc/rrdcached.pod
 
-### Volumes
+## Volumes
 
 * `/data/db` : Contains rrd database
 * `/data/journal` :  Container rrd journal files
@@ -82,7 +93,7 @@ Image: crazymax/rrdcached:latest
 > :warning: Note that the volumes should be owned by the user/group with the specified `PUID` and `PGID`.
 > If you don't give the volume correct permissions, the container may not start.
 
-### Ports
+## Ports
 
 * `42217` : RRDcached port
 
