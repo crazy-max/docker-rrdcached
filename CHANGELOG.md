@@ -1,8 +1,16 @@
 # Changelog
 
+## 1.7.2-r4-r0 (2021/02/17)
+
+* RRDtool cached 1.7.2-r4
+* `s6-overlay` 2.2.0.3
+* Alpine Linux 3.13
+* Fix daemon to listen on port 42217 (librenms/docker#124)
+* Switch to buildx bake
+
 ## 1.7.2-r3-RC4 (2020/11/08)
 
-* Switch to s6-overlay and log through socklog-overlay
+* Switch to `s6-overlay` and log through `socklog-overlay`
 
 ## 1.7.2-r3-RC3 (2020/08/07)
 

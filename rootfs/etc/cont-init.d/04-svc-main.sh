@@ -18,7 +18,6 @@ cat > /etc/services.d/rrdcached/run <<EOL
 with-contenv
 /usr/sbin/rrdcached \
   -g \
-  -L \
   -F \
   -B \
   -R \
