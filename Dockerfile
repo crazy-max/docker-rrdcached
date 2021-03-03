@@ -1,21 +1,19 @@
-ARG RRDCACHED_VERSION="1.7.2"
-ARG RRDCACHED_RELEASE="r4"
+ARG RRDCACHED_VERSION=1.7.2
+ARG RRDCACHED_RELEASE=r4
 
-FROM --platform=${TARGETPLATFORM:-linux/amd64} crazymax/alpine-s6:3.13-2.2.0.3
+FROM --platform=${TARGETPLATFORM:-linux/amd64} crazymax/alpine-s6:3.13-2.1.0.2
 LABEL maintainer="CrazyMax"
-
-ARG RRDCACHED_VERSION
-ARG RRDCACHED_RELEASE
 
 ENV TZ="UTC" \
   PUID="1000" \
   PGID="1000"
 
+ARG RRDCACHED_VERSION
+ARG RRDCACHED_RELEASE
 RUN apk add --update --no-cache \
     bash \
     rrdtool-cached=${RRDCACHED_VERSION}-${RRDCACHED_RELEASE} \
     shadow \
-    su-exec \
     tzdata \
   && addgroup -g ${PGID} rrdcached \
   && adduser -D -H -u ${PUID} -G rrdcached -s /bin/sh rrdcached \
