@@ -36,7 +36,7 @@ ___
 * Run as non-root user
 * Multi-platform image
 
-### Build locally
+## Build locally
 
 ```shell
 git clone https://github.com/crazy-max/docker-rrdcached.git
