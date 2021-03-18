@@ -1,6 +1,10 @@
 # Changelog
 
-## 1.7.2-r4-r0 (2021/02/17)
+## 1.7.2-r5 (2021/03/18)
+
+* Upstream Alpine update
+
+## 1.7.2-r4 (2021/02/17)
 
 * RRDtool cached 1.7.2-r4
 * `s6-overlay` 2.2.0.3
