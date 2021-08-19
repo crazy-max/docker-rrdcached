@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.2-r4-r2 (2021/03/19)
+
+* alpine-s6 3.14-2.2.0.3 (#30)
+* Move to `docker/metadata-action`
+
 ## 1.7.2-r4-r1 (2021/03/18)
 
 * Upstream Alpine update
