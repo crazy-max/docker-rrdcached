@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.2-r5-r0 (2022/05/15)
+
+* RRDtool cached 1.7.2-r5
+* Alpine Linux 3.15
+
 ## 1.7.2-r4-r2 (2021/03/19)
 
 * alpine-s6 3.14-2.2.0.3 (#30)
