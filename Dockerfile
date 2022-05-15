@@ -1,7 +1,7 @@
 ARG RRDCACHED_VERSION=1.7.2
-ARG RRDCACHED_RELEASE=r4
+ARG RRDCACHED_RELEASE=r5
 
-FROM crazymax/alpine-s6:3.14-2.2.0.3
+FROM crazymax/alpine-s6:3.15-2.2.0.3
 
 ENV TZ="UTC" \
   PUID="1000" \
@@ -16,7 +16,7 @@ RUN apk add --update --no-cache \
     tzdata \
   && addgroup -g ${PGID} rrdcached \
   && adduser -D -H -u ${PUID} -G rrdcached -s /bin/sh rrdcached \
-  && rm -rf /tmp/* /var/cache/apk/*
+  && rm -rf /tmp/*
 
 COPY rootfs /
 
