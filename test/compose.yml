@@ -1,4 +1,4 @@
-name: rrddcached
+name: rrdcached
 
 services:
   rrdcached:
