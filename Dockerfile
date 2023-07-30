@@ -1,7 +1,9 @@
-ARG RRDCACHED_VERSION=1.7.2
-ARG RRDCACHED_RELEASE=r5
+# syntax=docker/dockerfile:1
 
-FROM crazymax/alpine-s6:3.15-2.2.0.3
+ARG RRDCACHED_VERSION=1.8.0
+ARG RRDCACHED_RELEASE=r2
+
+FROM crazymax/alpine-s6:3.18-2.2.0.3
 
 ENV TZ="UTC" \
   PUID="1000" \
