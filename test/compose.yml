@@ -1,3 +1,5 @@
+name: rrddcached
+
 services:
   rrdcached:
     image: ${RRDCACHED_IMAGE:-crazymax/rrdcached}
