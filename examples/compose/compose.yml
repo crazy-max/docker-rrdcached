@@ -1,0 +1,26 @@
+name: rrddcached
+
+services:
+  rrdcached:
+    image: crazymax/rrdcached
+    container_name: rrdcached
+    ports:
+      - target: 42217
+        published: 42217
+        protocol: tcp
+    volumes:
+      - "rrdcached-db:/data/db"
+      - "rrdcached-journal:/data/journal"
+    environment:
+      - "TZ=Europe/Paris"
+      - "PUID=1000"
+      - "PGID=1000"
+      - "LOG_LEVEL=LOG_INFO"
+      - "WRITE_TIMEOUT=300"
+      - "WRITE_THREADS=4"
+      - "FLUSH_DEAD_DATA_INTERVAL=3600"
+    restart: always
+
+volumes:
+  rrdcached-db:
+  rrdcached-journal:

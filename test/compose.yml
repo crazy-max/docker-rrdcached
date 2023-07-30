@@ -1,9 +1,11 @@
-version: "3.5"
+name: rrddcached
 
 services:
   rrdcached:
-    image: crazymax/rrdcached
-    container_name: rrdcached
+    image: ${RRDCACHED_IMAGE:-crazymax/rrdcached}
+    container_name: ${RRDCACHED_CONTAINER:-rrdcached}
+    networks:
+      - rrdcached
     ports:
       - target: 42217
         published: 42217
@@ -15,7 +17,7 @@ services:
       - "TZ=Europe/Paris"
       - "PUID=1000"
       - "PGID=1000"
-      - "LOG_LEVEL=LOG_INFO"
+      - "LOG_LEVEL=LOG_DEBUG"
       - "WRITE_TIMEOUT=300"
       - "WRITE_THREADS=4"
       - "FLUSH_DEAD_DATA_INTERVAL=3600"
@@ -24,3 +26,7 @@ services:
 volumes:
   rrdcached-db:
   rrdcached-journal:
+
+networks:
+  rrdcached:
+    name: rrdcached
