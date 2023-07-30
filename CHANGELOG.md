@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.8.0-r0 (2023/07/30)
+
+* RRDtool cached 1.8.0
+* Alpine Linux 3.18
+
 ## 1.7.2-r5-r0 (2022/05/15)
 
 * RRDtool cached 1.7.2-r5
