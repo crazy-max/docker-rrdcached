@@ -84,6 +84,7 @@ linux/s390x
 * `WRITE_THREADS` : Number of threads used for writing RRD files, called with `-t` (default `4`)
 * `FLUSH_DEAD_DATA_INTERVAL` : Every *X* seconds the entire cache is searched for old values which are written to disk, called with `-f` (default `3600`)
 
+> [!NOTE]
 > More info : https://github.com/oetiker/rrdtool-1.x/blob/master/doc/rrdcached.pod
 
 ## Volumes
@@ -91,8 +92,10 @@ linux/s390x
 * `/data/db` : Contains rrd database
 * `/data/journal` :  Container rrd journal files
 
-> :warning: Note that the volumes should be owned by the user/group with the specified `PUID` and `PGID`.
-> If you don't give the volume correct permissions, the container may not start.
+> [!WARNING]
+> Note that the volumes should be owned by the user/group with the specified
+> `PUID` and `PGID`. If you don't give the volume correct permissions, the
+> container may not start.
 
 ## Ports
 
