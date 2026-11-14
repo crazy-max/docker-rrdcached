@@ -45,7 +45,7 @@ jobs:
       -
         name: Start
         run: |
-          docker compose up -d
+          docker compose up -d --wait --wait-timeout 120
         working-directory: test
         env:
           RRDCACHED_IMAGE: ${{ env.BUILD_TAG }}
@@ -57,6 +57,14 @@ jobs:
           name: ${{ env.CONTAINER_NAME }}
           log_check: "listening for connections"
           timeout: 120
+      -
+        name: Check service
+        run: |
+          docker compose exec -T rrdcached sh -s < service.sh
+        working-directory: test
+        env:
+          RRDCACHED_IMAGE: ${{ env.BUILD_TAG }}
+          RRDCACHED_CONTAINER: ${{ env.CONTAINER_NAME }}
       -
         name: Logs
         if: always()

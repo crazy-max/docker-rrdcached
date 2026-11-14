@@ -1,11 +1,11 @@
-#!/usr/bin/with-contenv sh
+#!/bin/sh
 
 echo "Fixing perms..."
 mkdir -p /data/db \
   /data/journal \
   /var/run/rrdcached
-chown rrdcached. \
+chown rrdcached:rrdcached \
   /data/db \
   /data/journal
-chown -R rrdcached. \
+chown -R rrdcached:rrdcached \
   /var/run/rrdcached
