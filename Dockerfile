@@ -3,9 +3,10 @@
 ARG RRDCACHED_VERSION=1.9.0
 ARG RRDCACHED_RELEASE=r4
 
-FROM crazymax/alpine-s6:3.22-2.2.0.3
+FROM alpine:3.22
 
-ENV TZ="UTC" \
+ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2" \
+  TZ="UTC" \
   PUID="1000" \
   PGID="1000"
 
@@ -14,6 +15,7 @@ ARG RRDCACHED_RELEASE
 RUN apk add --update --no-cache \
     bash \
     rrdtool-cached=${RRDCACHED_VERSION}-${RRDCACHED_RELEASE} \
+    s6-overlay \
     shadow \
     tzdata \
   && addgroup -g ${PGID} rrdcached \
@@ -25,6 +27,8 @@ COPY rootfs /
 EXPOSE 42217
 WORKDIR /data
 VOLUME [ "/data/db", "/data/journal" ]
+
+ENTRYPOINT [ "/init" ]
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5m \
   CMD echo PING | nc 127.0.0.1 42217 | grep PONG || exit 1

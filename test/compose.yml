@@ -15,8 +15,8 @@ services:
       - "rrdcached-journal:/data/journal"
     environment:
       - "TZ=Europe/Paris"
-      - "PUID=1000"
-      - "PGID=1000"
+      - "PUID=1234"
+      - "PGID=1235"
       - "LOG_LEVEL=LOG_DEBUG"
       - "WRITE_TIMEOUT=300"
       - "WRITE_THREADS=4"
