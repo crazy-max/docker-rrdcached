@@ -1,20 +1,18 @@
 # syntax=docker/dockerfile:1
 
-ARG RRDCACHED_VERSION=1.10.2
-ARG RRDCACHED_RELEASE=r0
+# renovate: datasource=custom.alpine-rrdcached depName=alpine
+ARG ALPINE_VERSION=3.24
+ARG RRDCACHED_VERSION=1.10.2-r0
 
-FROM alpine:3.24
-
+FROM alpine:${ALPINE_VERSION}
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2" \
   TZ="UTC" \
   PUID="1000" \
   PGID="1000"
-
 ARG RRDCACHED_VERSION
-ARG RRDCACHED_RELEASE
 RUN apk add --update --no-cache \
     bash \
-    rrdtool-cached=${RRDCACHED_VERSION}-${RRDCACHED_RELEASE} \
+    rrdtool-cached=${RRDCACHED_VERSION} \
     s6-overlay \
     shadow \
     tzdata \
